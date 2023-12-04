@@ -1,0 +1,4 @@
+enum Routes {
+  login,
+  home,
+}
