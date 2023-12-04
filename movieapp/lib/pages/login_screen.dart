@@ -112,17 +112,14 @@ class Login extends StatelessWidget {
   }
 
   Future<void> login(BuildContext context) async {
-    //* Crear ScaffoldMessenger y navigator para evitar usar el BuildContext dentro del proceso asíncrono -Gevawer
     final scaffold = ScaffoldMessenger.of(context);
     final navigator = Navigator.of(context);
-    //* Validación del formulario
     if (formKey.currentState!.validate()) {
-      //* Creación de mapa usuario
+
       final Map<String, dynamic> user = {
         'username': mailController.text,
         'password': passwordController.text,
       };
-      //* Creación de la respuesta de la API por método post
       final response = await http.post(
         Uri.parse('https://fakestoreapi.com/auth/login'),
         headers: {'Content-Type': 'application/json'},
