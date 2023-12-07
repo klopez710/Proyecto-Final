@@ -1,4 +1,5 @@
 class Movie {
+  final int id;
   final String backdropPath;
   final String originalTitle;
   final String overview;
@@ -8,6 +9,7 @@ class Movie {
   final double voteAverage;
 
   Movie({
+    required this.id,
     required this.backdropPath,
     required this.originalTitle,
     required this.overview,
@@ -18,6 +20,7 @@ class Movie {
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) => Movie(
+        id: json["id"],
         backdropPath: json["backdrop_path"],
         originalTitle: json["original_title"],
         overview: json["overview"],
@@ -28,6 +31,7 @@ class Movie {
       );
 
   Map<String, dynamic> toJson() => {
+        "id": id,
         "backdrop_path": backdropPath,
         "original_title": originalTitle,
         "overview": overview,

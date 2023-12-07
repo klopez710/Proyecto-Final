@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/constants.dart';
-import 'package:movieapp/pages/details_screen.dart';
+import 'package:movieapp/screens/details_screen.dart';
 
-class Proximas extends StatelessWidget {
-  const Proximas({super.key, required this.snapshot});
+class Populares extends StatelessWidget {
+  const Populares({super.key, required this.snapshot});
 
   final AsyncSnapshot snapshot;
 
@@ -15,12 +15,12 @@ class Proximas extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
-        itemCount: snapshot.data!.length,
+        itemCount: snapshot.data.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
-              onTap: () {
+              onTap:(){
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -29,7 +29,7 @@ class Proximas extends StatelessWidget {
                     ),
                   ),
                 );
-              },
+              } ,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: SizedBox(

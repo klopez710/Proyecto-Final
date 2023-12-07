@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movieapp/api/api.dart';
 import 'package:movieapp/models/movie.dart';
-import 'package:movieapp/widgets/populares.dart';
-import 'package:movieapp/widgets/proximas_movies.dart';
-import 'package:movieapp/widgets/tendencias.dart';
+import 'package:movieapp/pages/populares.dart';
+import 'package:movieapp/pages/proximas_movies.dart';
+import 'package:movieapp/pages/tendencias.dart';
 import 'package:movieapp/widgets/logo_app.dart';
 
 class HomeScreen extends StatefulWidget {

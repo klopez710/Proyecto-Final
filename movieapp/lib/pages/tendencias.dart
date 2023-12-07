@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movieapp/constants.dart';
-import 'package:movieapp/pages/details_screen.dart';
+import 'package:movieapp/screens/details_screen.dart';
 
 class Tendencias extends StatelessWidget {
   const Tendencias({super.key, required this.snapshot});

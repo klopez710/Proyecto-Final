@@ -11,7 +11,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
-
+  //Hola a todos
   final box = GetStorage();
 
   @override

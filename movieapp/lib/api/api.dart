@@ -4,7 +4,11 @@ import 'package:http/http.dart' as http;
 import 'package:movieapp/constants.dart';
 import 'package:movieapp/models/movie.dart';
 
+import '../models/cast.dart';
+
 class Api {
+  List<Cast> credits = [];
+
   static const _trendingUrl =
       'https://api.themoviedb.org/3/trending/movie/day?language=es-ES&api_key=${Constants.apiKey}';
 

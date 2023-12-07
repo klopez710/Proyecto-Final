@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:get_storage/get_storage.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:movieapp/shared/routes.dart';
 import 'package:movieapp/widgets/format_box.dart';
+import 'package:movieapp/widgets/logo_app.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
@@ -33,19 +33,7 @@ class Login extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 25.0),
-                  child: CachedNetworkImage(
-                      placeholder: (context, url) {
-                        return const Center(child: CircularProgressIndicator());
-                      },
-                      errorWidget: (context, url, error) {
-                        return const Icon(
-                          Icons.no_photography,
-                          color: Colors.red,
-                          size: 100,
-                        );
-                      },
-                      width: 120,
-                      imageUrl: "https://fakestoreapi.com/icons/logo.png"),
+                  child: const Logo(),
                 ),
                 Form(
                   key: formKey,
@@ -93,13 +81,13 @@ class Login extends StatelessWidget {
                     login(context);
                   },
                   style: TextButton.styleFrom(
-                      backgroundColor: Colors.purple[400],
+                      backgroundColor: Colors.amber,
                       minimumSize: const Size(200, 50)),
                   child: const Text(
                     "Login",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
+                      color: Colors.black,
+                      fontSize: 22,
                     ),
                   ),
                 ),
@@ -130,7 +118,7 @@ class Login extends StatelessWidget {
         //* Éxito en la solicitud
         final responseData = jsonDecode(response.body);
         await box.write('token', responseData['token']);
-        navigator.pushNamed(Routes.home.name);
+        navigator.pushReplacementNamed(Routes.home.name);
       } else {
         //* Error en la solicitud
         scaffold.showSnackBar(
